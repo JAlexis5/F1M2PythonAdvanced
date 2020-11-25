@@ -21,7 +21,7 @@ BG_COLOUR = [0, 0, 0]
 IS_RUNNING = True
 
 
-playerSprite = pygame.image.load("../Art/spr_Player.png")
+playerSprite = pygame.image.load("../Art/gun.png")
 playerRect = playerSprite.get_rect()
 playerSpeed = 5
 
@@ -47,14 +47,14 @@ while IS_RUNNING:
     # UPDATE GAME LOGIC:
     # ------------------------------------------------
     if (KEYS_DOWN[K_UP]):
-        playerRect.y -= playerSpeed
-    elif (KEYS_DOWN[K_DOWN]):
         playerRect.y += playerSpeed
+    elif (KEYS_DOWN[K_DOWN]):
+        playerRect.y -= playerSpeed
 
     if (KEYS_DOWN[K_LEFT]):
-        playerRect.x -= playerSpeed
-    elif (KEYS_DOWN[K_RIGHT]):
         playerRect.x += playerSpeed
+    elif (KEYS_DOWN[K_RIGHT]):
+        playerRect.x -= playerSpeed
     
 
     # ------------------------------------------------
@@ -75,5 +75,3 @@ while IS_RUNNING:
     # The program basically waits a certain amount of time before it continues.
     # This function converts the desired result, which is expressed in "frames per second", into the exact nanoseconds wait time.
     CLOCK.tick(FPS)
-
-
